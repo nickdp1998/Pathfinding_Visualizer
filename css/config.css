@@ -1,0 +1,35 @@
+#config {
+    /*Forme du style*/
+    background-color: white;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    overflow: auto;
+    /*Forme du texte*/
+    font-size: 12pt;
+}
+
+#size-selector {
+    /*Forme du style*/
+    padding: 10px 15px 5px;
+     /*Forme du texte*/
+    font-size: 12pt;
+}
+
+.choice {
+    float: left;
+    padding: 0 15px;
+}
+
+.visualise {
+    padding: 0 10px;
+}
+
+.reset {
+    padding: 0 10px;
+}
+
+input[type="checkbox"][readonly] {
+    pointer-events: none;
+}

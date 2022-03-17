@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Pathfinding</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/grid.css">
+    <link rel="stylesheet" href="../css/config.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/app.js"></script>
+</head>
+
+<body>
+    <header id="navigation">
+        <!--Barre de navigation-->
+        <div id="nav-wrap">
+            <!--Sélection des sections-->
+            <div class="selection">
+                <a href="Portfolio.html">
+                    Accueil
+                </a>
+            </div>
+            <div class="selection">
+                <a href="Pathfinding.html">
+                    Pathfinding
+                </a>
+            </div>
+            <div class="selection">
+                Tri
+                <!--<a href="Sort.html">
+                    Tri
+                </a>-->
+            </div>
+        </div>
+        <div id="config">
+            <form>
+                <div class="choice">
+                    <label for="width-selector">Largeur :</label>
+                    <input type="text" id="width-selector" name="width-selector" value="100"><br><br>
+                    <label for="height-selector">Hauteur :</label>
+                    <input type="text" id="height-selector" name="height-selector" value="40">
+                </div>
+                
+                <div class="choice">
+                    <br>
+                    <label for="move-start">Déplacer le départ</label><br>
+                    <input type="checkbox" id="move-start" name="move-start" checked>
+                </div>
+                <div class="choice">
+                    <br>
+                    <label for="move-finish">Déplacer l'arrivée</label><br>
+                    <input type="checkbox" id="move-finish" name="move-finish">
+                </div>
+                <div class="choice">
+                    <br>
+                    <label for="add-wall">Ajouter des murs</label><br>
+                    <input type="checkbox" id="add-wall" name="add-wall">
+                </div>
+                <div class="choice">
+                    <br>
+                    <label for="delete-wall">Supprimer des murs</label><br>
+                    <input type="checkbox" id="delete-wall" name="delete-wall">
+                </div>
+                
+            </form>
+            <div class="choice">
+                <br>
+                <button class="visualise" onclick="visualise()">Visualiser</button>
+            </div>
+            <!--
+            <div class="choice">
+                <br>
+                <button class="realTime" onclick="realTime()">Voir en temps réel</button>
+            </div>
+            -->
+            <div class="choice">
+                <br>
+                <button class="reset" onclick="reset()">Réinitialiser</button>
+            </div>
+        </div>
+    </header>
+    
+    <div id="grid-container" onmouseup="mouseUp()" onmousedown="mouseDown()"></div>
+</body>
+
+</html>

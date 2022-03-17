@@ -1,0 +1,86 @@
+#grid-container {
+    display: grid;
+    background-color: white;
+    padding: 30px 5vw;
+}
+
+.grid-item {
+    background-color: white;
+    border: 1px solid rgb(114, 114, 114);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.grid-item-black {
+    background-color: rgb(114, 114, 114);
+    border: 1px solid rgb(114, 114, 114);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.grid-item-gradient {
+    background-color: white;
+    border: 1px solid rgb(114, 114, 114);
+    animation-name: gradient-search;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}  
+
+@keyframes gradient-search {
+    from {background-color: white;}
+    to {background-color: rgb(135, 135, 233);}
+}
+
+.grid-path {
+    background-color: rgb(135, 135, 233);
+    border: 1px solid rgb(114, 114, 114);
+    animation-name: gradient-path;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@keyframes gradient-path {
+    from {background-color: rgb(135, 135, 233)}
+    to {background-color: rgb(253, 161, 55)}
+}
+
+.grid-no-path {
+    background-color: rgb(135, 135, 233);
+    border: 1px solid rgb(114, 114, 114);
+    animation-name: gradient-no-path;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@keyframes gradient-no-path {
+    from {background-color: rgb(135, 135, 233);}
+    to {background-color: rgb(255, 96, 96);}
+}
+
+.grid-start {
+    background-color: rgb(76, 180, 76);
+    border: 1px solid rgb(114, 114, 114);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.grid-finish {
+    background-color: rgb(108, 243, 236);
+    border: 1px solid rgb(114, 114, 114);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.grid-explored {
+    background-color: rgb(135, 135, 233);
+    border: 1px solid rgb(114, 114, 114);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.grid-path-instant {
+    background-color: rgb(253, 161, 55);
+    border: 1px solid rgb(114, 114, 114);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

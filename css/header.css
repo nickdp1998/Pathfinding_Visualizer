@@ -1,0 +1,50 @@
+body {
+    /*Forme du style*/
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+}
+
+#navigation {
+    /*Forme du style*/
+    background-color: #1e263a;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /*Forme du texte*/
+    font-size: 12pt;
+    z-index: 2;
+}
+
+#nav-wrap {
+    /*Forme du style*/
+    overflow: auto;
+    margin: auto;
+    padding-top: 14.4px;
+    padding-bottom: 14.4px;
+    line-height: 63.5px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.selection {
+    /*Forme du style*/
+    float: left;
+    overflow: auto;
+    margin: auto;
+    line-height: 34.667px;
+    vertical-align: middle;
+    /*Forme du texte*/
+    color: white;
+    padding: 0 15px 0;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
