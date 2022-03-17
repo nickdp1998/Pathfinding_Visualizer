@@ -1,11 +1,11 @@
-let mouse = false
-let width = 100
-let height = 40
-let move_start = true
-let move_finish = false
-let add_wall = false
-let delete_wall = false
-let generation = false
+let mouse = false       //Boutton gauche enfoncé
+let width = 100         //Largeur de la grille
+let height = 40         //Hauteur de la grille
+let move_start = true   //En cours d'ajout d'un départ
+let move_finish = false //En cours d'ajout d'une arrivée
+let add_wall = false    //En cours d'ajout de murs  
+let delete_wall = false //En cours de suppression de murs
+let generation = false  //En cours de génération
 
 $(document).ready(function(){
     $("#width-selector").on("input", function(){
@@ -57,6 +57,7 @@ $(document).ready(function(){
     });
 });
 
+//Fonction pour changer un checkbox
 function checkboxCheck (name) {
     switch (name) {
         case "move-start":
@@ -174,9 +175,9 @@ function moveStart(square) {
 }
 function forceMoveStart(square) {
     if(document.getElementsByClassName('grid-start')[0])
-            document.getElementsByClassName('grid-start')[0].setAttribute('class','grid-item')
+        document.getElementsByClassName('grid-start')[0].setAttribute('class','grid-item')
     
-        square.setAttribute('class','grid-start')
+    square.setAttribute('class','grid-start')
 }
 
 //Fonction pour déplacer l'arrivée
@@ -227,6 +228,7 @@ function reset() {
         squares[0].setAttribute('class','grid-item')
     }
 
+    unlock()
 }
 
 //Fonctions qui vérifie l'état de la souris
@@ -262,6 +264,10 @@ function unlock() {
     $("input:checkbox").prop('readonly', false)
     $("input:text").prop('readonly', false)
     $("button").prop('disabled', false)
+}
+
+function unlockReset() {
+    $(".reset").prop('disabled', false)
 }
 
 //Fonction algorithme de Dijkstra
@@ -352,87 +358,11 @@ function dijkstra() {
 
 }
 
-/*function realTime() {
-    var start = parseInt($(".grid-start").attr('id'))
-    var finish = parseInt($(".grid-finish").attr('id'))
-    var current = []
-    var explored = []
-    var dist = []
-    var parent = []
-
-    for(let i = 0; i < width*height; i++) {
-        parent.push(-1)
-        dist.push(-1)
-    }
-
-    current.push(start)
-    dist[start] = 0
-        
-    while(true) {
-        if(current.length == 0)
-            break
-
-        if(current.indexOf(finish) != -1) {
-            break
-        }
-               
-
-        var size = current.length
-        for(let i = 0; i < size; i++) {
-            if((current[0] + 1) % width != 0 && dist[current[0] + 1] == -1 &&
-                    document.getElementById(current[0]+1).className != 'grid-item-black') {
-                dist[current[0] + 1] = dist[current[0]] + 1
-                current.push(current[0] + 1)
-                parent[current[0] + 1] = current[0] 
-            }
-            if(current[0] % width != 0 && dist[current[0] - 1] == -1 &&
-                    document.getElementById(current[0]-1).className != 'grid-item-black') {
-                dist[current[0] - 1] = dist[current[0]] + 1
-                current.push(current[0] - 1)
-                parent[current[0] - 1] = current[0] 
-            }
-            if(current[0] + width < width*height && dist[current[0] + width] == -1 &&
-                    document.getElementById(current[0]+width).className != 'grid-item-black') {
-                dist[current[0] + width] = dist[current[0]] + 1
-                current.push(current[0] + width)
-                parent[current[0] + width] = current[0] 
-            }
-            if(current[0] - width > 0 && dist[current[0] - width] == -1 &&
-                    document.getElementById(current[0]-width).className != 'grid-item-black') {
-                dist[current[0] - width] = dist[current[0]] + 1
-                current.push(current[0] - width)
-                parent[current[0] - width] = current[0] 
-            }
-            explored.push(current[0])
-            current.shift()
-            
-        }
-
-        for(let i of current) {
-            square = document.getElementById(i)
-            if(square.className != 'grid-finish')
-                square.setAttribute('class','grid-explored')
-        }
-    }
-    var path = []
-    var currentPath = finish
-    while(currentPath != start) {
-        currentPath = parent[currentPath]
-        path.unshift(currentPath)
-    }
-    path.shift()
-    while(path.length != 0){
-        document.getElementById(path[0]).setAttribute('class','grid-path-instant')
-        path.shift()
-    }
-    unlock()
-}*/
-
 //Fonction qui trace le chemin optimal
 function drawPath(path) {
     interval2 = setInterval(function () {
         if(path.length == 0) {
-            unlock()
+            unlockReset()
             clearInterval(interval2)
         }
 
@@ -449,7 +379,7 @@ function drawNoPath(explored) {
             square.setAttribute('class','grid-no-path')
         }
     }
-    unlock()
+    unlockReset()
 }
 
 window.onload = setGrid
