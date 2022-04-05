@@ -1,2 +1,8 @@
 # Pathfinding visualizer
-Petit projet ayant pour but de visualiser l'algorithme de Dijkstra dans une quadrillage.
+Le but de ce projet est de visualiser l'algorithme de Dijkstra dans un quadrillage.
+
+# Guide d'utilisation 
+Notes générales
+
+    - Dimensions maximales de la grille : 100 x 100 <br />
+    - Il faut réinitialiser la grille après chaque utilisation
